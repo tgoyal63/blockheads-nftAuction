@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFT Auction</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <h2>NFT Auction</h2>
+    <div id="wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="item">
+                <h3>List</h3>
+                <div class="stroke"></div>
+                <input type="tel" id="token-id" placeholder="Token ID" min="0" />
+                <br />
+                <input type="number" id="min-price-list" placeholder="Minimum Price" min="0" />
+                <br />
+                <input type="number" id="list-duration" placeholder="Duration (hours)" />
+                <br />
+                <button onclick="list()">List NFT</button>
+            </div>
+            <div class="item">
+                <h3>End Auction/Listing</h3>
+                <div class="stroke"></div>
+
+                <input type="number" id="listing-id-end" placeholder="Listing ID" min="0"/>
+                <button onclick="End">End</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="item">
+                <h3>Bid on Listing</h3>
+                <div class="stroke"></div>
+
+                <input type="number" id="listing-id-bid" placeholder="Listing ID" min="0" />
+                <br />
+                <input type="number" id="bid-amount" placeholder="Amount to Bid" min="0" />
+                <br />
+                <button onclick="bid()">Bid</button>
+            </div>
+            <div class="item">
+                <h3>Approve Auction</h3>
+                <div class="stroke"></div>
+
+                <input type="tel" id="token-id-approve" placeholder="NFT Token ID" min="0" />
+                <br />
+                <button onclick="approve()">Approve Transfer</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="item">
+                <h3>View Listing Info</h3>
+                <div class="stroke"></div>
+
+                <div>
+                    <input type="number" id="listing-id-view" min="0" placeholder="Listing ID"/>
+                    <button onclick="view()">View Listing</button>
+                </div>
+                <p>NFT-Contract: <span id ="contract-address"></span></p>
+                <p>NFT-ID: <span id ="nft-id"></span></p>
+                <p>Current Bid: <span id ="current-bid"></span></p>
+                <p>Min Price: <span id ="min-price-view"></span></p>
+                <p>End Time: <span id ="end-time-view"></span></p>
+
+            </div>
+            <div class="item">
+                <button onclick="withDrawFunds()">Withdraw Funds</button>
+            </div>
+        </div>
+    </div> 
+
+</div>
+    <script
+        src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"
+        type="application/javascript"
+    ></script>
+    <script type="text/javascript" src="script.js"></script>
+    
+</body>
+</html>
